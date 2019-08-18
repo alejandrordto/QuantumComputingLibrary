@@ -42,5 +42,33 @@ public class operaciones {
         }
         return vector;
     }
-    
+    public NumeroComplejo[][] sumaMatriz( NumeroComplejo[][] m1,  NumeroComplejo[][] m2){
+         NumeroComplejo[][] matriz = new NumeroComplejo[m1.length][m1[0].length];
+         for (int i = 0; i < m1.length; i++) {
+            for (int j=0; i< m1[0].length;i++){
+                matriz[i][j]= app.suma(m1[i][j],m2[i][j]);
+            }
+            
+        }
+        return matriz;
+    }
+    public  NumeroComplejo[][] inversaMatriz(NumeroComplejo[][] m1){
+        NumeroComplejo[][] matriz = new NumeroComplejo[m1.length][m1[0].length];
+        for (int i = 0; i < m1.length; i++) {
+            for (int j=0; i< m1[0].length;i++){
+                matriz[i][j]= new NumeroComplejo(-m1[i][j].getReal(),-m1[i][j].getImaginario());
+            }
+        }
+            
+        return matriz;
+    }
+     public  NumeroComplejo[][] multiplicacionEscalarMatriz(NumeroComplejo[][] m1,NumeroComplejo c1){
+        NumeroComplejo[][] matriz = new NumeroComplejo[m1.length][m1[0].length];
+        for (int i = 0; i < m1.length; i++) {
+            for (int j=0; i< m1[0].length;i++){
+                matriz[i][j]= app.producto(m1[i][j], c1);
+            }
+        }
+        return matriz;
+    }
 }
