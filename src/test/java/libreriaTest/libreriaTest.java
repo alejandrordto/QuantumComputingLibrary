@@ -27,7 +27,7 @@ public class libreriaTest {
         NumeroComplejo nc2 = new NumeroComplejo(1,-5);
         NumeroComplejo respuesta = app.suma(nc1, nc2);
         NumeroComplejo esperado = new NumeroComplejo(7,0);
-        assertEquals(respuesta.toString(), esperado.toString());
+        assertEquals(respuesta, esperado);
     }
      @Test
     public void restaTest() {
@@ -36,8 +36,8 @@ public class libreriaTest {
         NumeroComplejo nc2 = new NumeroComplejo(1,-5);
         NumeroComplejo respuesta = app.resta(nc1, nc2);
         NumeroComplejo esperado = new NumeroComplejo(5,10);
-        //assertEquals(respuesta, esperado);
-        assertEquals(respuesta.toString(), esperado.toString());
+        assertEquals(respuesta, esperado);
+        
     }
      @Test
     public void multiplicacionTest() {
@@ -46,8 +46,7 @@ public class libreriaTest {
         NumeroComplejo nc2 = new NumeroComplejo(2,2);
         NumeroComplejo respuesta = app.producto(nc1, nc2);
         NumeroComplejo esperado = new NumeroComplejo(2,6);
-        //assertEquals(respuesta, esperado);
-        assertEquals(respuesta.toString(), esperado.toString());
+        assertEquals(respuesta, esperado);
     }
      @Test
     public void divicionTest() {
@@ -56,8 +55,7 @@ public class libreriaTest {
         NumeroComplejo nc2 = new NumeroComplejo(0,1);
         NumeroComplejo respuesta = app.division(nc1, nc2);
         NumeroComplejo esperado = new NumeroComplejo(2,-4);
-        //assertEquals(respuesta, esperado);
-        assertEquals(respuesta.toString(), esperado.toString());
+        assertEquals(respuesta, esperado);
     }
     @Test
     public void pruebaconjugado(){
@@ -65,17 +63,24 @@ public class libreriaTest {
         NumeroComplejo nc1 = new NumeroComplejo(67,4);
         NumeroComplejo respuesta = app.conjugado(nc1);
         NumeroComplejo esperado = new NumeroComplejo(67,-4);
-        //assertEquals(respuesta, esperado);
-        assertEquals(respuesta.toString(), esperado.toString());
+        assertEquals(respuesta, esperado);
     }
+    
     @Test
-    public void pruebaAPolar(){
+    public void puebaFase(){
         LibreriaComputacion app = new LibreriaComputacion();
-        NumeroComplejo nc1 = new NumeroComplejo(0,-1);
-        NumeroPolar respuesta = app.aPolar(nc1);
-        NumeroPolar esperado = new NumeroPolar(-90,1);
-        //assertEquals(respuesta, esperado);
-        assertEquals(respuesta.toString(), esperado.toString());
+        NumeroComplejo nc1 = new NumeroComplejo(0,1);
+        double esperado = 90;
+        double respuesta =app.fase(nc1);
+        assertEquals(respuesta, esperado,0);
+    }
+     @Test
+    public void pruebaModulo(){
+        LibreriaComputacion app = new LibreriaComputacion();
+        NumeroComplejo nc1 = new NumeroComplejo(0,1);
+        double esperado = 1;
+        double respuesta = app.modulo(nc1);
+        assertEquals(respuesta, esperado,0);
     }
     @Test
     public void pruebaACartesiano(){
@@ -83,8 +88,7 @@ public class libreriaTest {
        NumeroPolar nc1 = new NumeroPolar(36.86989764584402,5);
         NumeroComplejo respuesta = app.aCartesiano(nc1);
         NumeroComplejo esperado = new NumeroComplejo(4,3);
-        //assertEquals(respuesta, esperado);
-        assertEquals(respuesta.toString(), esperado.toString());
+        assertEquals(respuesta, esperado);
     }
      @Test
     public void pruebaiTest() {
@@ -93,8 +97,7 @@ public class libreriaTest {
         NumeroComplejo nc2 = new NumeroComplejo(0,1);
         NumeroComplejo respuesta = app.producto(nc1, nc2);
         NumeroComplejo esperado = new NumeroComplejo(-1,0);
-        //assertEquals(respuesta, esperado);
-        assertEquals(respuesta.toString(), esperado.toString());
+        assertEquals(respuesta, esperado);
     }
     
 }

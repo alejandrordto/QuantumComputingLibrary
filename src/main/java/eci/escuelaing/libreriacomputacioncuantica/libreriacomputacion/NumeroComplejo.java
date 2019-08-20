@@ -35,9 +35,16 @@ public class NumeroComplejo {
         return imaginario;
     }
 
-   /*   @Override
+    @Override
     public boolean equals(Object obj) { 
-        return (this == obj);
-    }*/
+        if (this == obj){
+            return true;
+        } else if (this.getClass()!= obj.getClass()){
+            return false;
+        }
+        NumeroComplejo nc=(NumeroComplejo) obj;
+        Boolean flag = this.real == nc.getReal() && this.imaginario == nc.getImaginario();
+        return flag;
+    }
     
 }
