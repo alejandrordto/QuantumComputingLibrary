@@ -19,3 +19,12 @@ _las operaciones que dispone la aplicacion Para numeros complejos son:
 * aPolar: Este metodo permite dado un numero complejo, transformarlo a un numero polar.
 * aCartesiano: Contratio aPolar, este metodo recibe un numero Polar y lo convierte en un numero complejo.
 * Fase: Fase del complejo, recibe un NUmero complejo y retorna la representacion del radio de este.
+
+
+### Testing
+
+_Se crearon 9 pruebas, una por cada metodo y la prueba madre i*i, para ejecutarlas use mvn.
+
+```
+$ mvn test
+```
