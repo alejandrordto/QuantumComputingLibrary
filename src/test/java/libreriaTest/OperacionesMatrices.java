@@ -61,16 +61,56 @@ public class OperacionesMatrices {
     @Test
     public void adicionMatriz(){
         
-        NumeroComplejo[] lista = new NumeroComplejo[2];
-        NumeroComplejo[] listaDos = new NumeroComplejo[2];
-        NumeroComplejo[] esperado = new NumeroComplejo[2];
-        lista[0] =new NumeroComplejo(0,1);
-        lista[1] = new NumeroComplejo(1,0);
-        listaDos[0] = new NumeroComplejo(1,0);
-        listaDos[1]= new NumeroComplejo(0,1);
-        esperado[0] = new NumeroComplejo(1,1);
-        esperado[1] = new NumeroComplejo(1,1);
-        NumeroComplejo[] respuesta = operador.sumaVectorial(lista, listaDos);
+        NumeroComplejo[][] lista = new NumeroComplejo[2][2];
+        NumeroComplejo[][] listaDos = new NumeroComplejo[2][2];
+        NumeroComplejo[][]  esperado = new NumeroComplejo[2][2];
+        lista[0][0] =new NumeroComplejo(1,0);
+        lista[0][1] =new NumeroComplejo(0,1);
+        lista[1][0] = new NumeroComplejo(1,0);
+        lista[1][1] = new NumeroComplejo(0,1);
+        listaDos[0][0] = new NumeroComplejo(0,1);
+        listaDos[0][1] = new NumeroComplejo(1,0);
+        listaDos[1][0]= new NumeroComplejo(0,1);
+        listaDos[1][1]= new NumeroComplejo(1,0);
+        esperado[0][0] = new NumeroComplejo(1,1);
+        esperado[0][1] = new NumeroComplejo(1,1);
+        esperado[1][0] = new NumeroComplejo(1,1);
+        esperado[1][1] = new NumeroComplejo(1,1);
+        NumeroComplejo[][] respuesta = operador.sumaMatriz(lista, listaDos) ;
         assertEquals(respuesta,esperado);
     }
+    @Test
+    public void inversaMatriz(){
+        
+        NumeroComplejo[][] lista = new NumeroComplejo[2][2];
+        NumeroComplejo[][]  esperado = new NumeroComplejo[2][2];
+        lista[0][0] =new NumeroComplejo(1,1);
+        lista[0][1] =new NumeroComplejo(1,1);
+        lista[1][0] = new NumeroComplejo(1,1);
+        lista[1][1] = new NumeroComplejo(1,1);
+        esperado[0][0] = new NumeroComplejo(-1,-1);
+        esperado[0][1] = new NumeroComplejo(-1,-1);
+        esperado[1][0] = new NumeroComplejo(-1,-1);
+        esperado[1][1] = new NumeroComplejo(-1,-1);
+        NumeroComplejo[][] respuesta = operador.inversaMatriz(lista) ;
+        assertEquals(respuesta,esperado);
+    }
+    @Test
+    public void EscalarMatriz(){
+        
+        NumeroComplejo[][] lista = new NumeroComplejo[2][2];
+        NumeroComplejo[][]  esperado = new NumeroComplejo[2][2];
+        lista[0][0] =new NumeroComplejo(1,1);
+        lista[0][1] =new NumeroComplejo(1,1);
+        lista[1][0] = new NumeroComplejo(1,1);
+        lista[1][1] = new NumeroComplejo(1,1);
+        esperado[0][0] = new NumeroComplejo(0,4);
+        esperado[0][1] = new NumeroComplejo(0,4);
+        esperado[1][0] = new NumeroComplejo(0,4);
+        esperado[1][1] = new NumeroComplejo(0,4);
+        NumeroComplejo nc= new NumeroComplejo(2,2);
+        NumeroComplejo[][] respuesta = operador.multiplicacionEscalarMatriz(lista, nc) ;
+        assertEquals(respuesta,esperado);
+    }
+    
 }
