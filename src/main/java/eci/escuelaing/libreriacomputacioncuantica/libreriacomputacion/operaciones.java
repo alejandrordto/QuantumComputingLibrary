@@ -71,4 +71,30 @@ public class operaciones {
         }
         return matriz;
     }
+    public NumeroComplejo[][] Transpuesta(NumeroComplejo[][] m1){
+        NumeroComplejo[][] matriz = new NumeroComplejo[m1.length][m1[0].length];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j <matriz[0].length; j++) {
+                matriz[j][i]=m1[i][j];
+            }
+            
+            
+        }
+        return matriz;
+    }
+    public NumeroComplejo[][] MatrizConjugada(NumeroComplejo[][] m1){
+         NumeroComplejo[][] matriz = new NumeroComplejo[m1.length][m1[0].length];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+               matriz[i][j]=app.conjugado(m1[i][j]);
+            }
+        }
+        return matriz;
+    }
+    public NumeroComplejo[][] MatrizAdjunta(NumeroComplejo[][] m1){
+        NumeroComplejo[][] matriz ;
+        matriz=this.Transpuesta(m1);
+        matriz=this.MatrizConjugada(matriz);
+        return matriz;
+    }
 }
