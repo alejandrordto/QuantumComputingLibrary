@@ -46,5 +46,12 @@ public class NumeroComplejo {
         Boolean flag = this.real == nc.getReal() && this.imaginario == nc.getImaginario();
         return flag;
     }
+     @Override
+    public int hashCode(){
+        int hash=3;
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.real) ^ (Double.doubleToLongBits(this.real) >>> 32));
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.imaginario) ^ (Double.doubleToLongBits(this.imaginario) >>> 32));
+        return hash;
+    }
     
 }
