@@ -33,10 +33,17 @@ las operaciiones disponibles para hacer calculos con las matrizes y vectores son
 * Transpuesta: dada un matriz, calcula su traspuesta.
 * MatrizConjugada: dada una matriz, calcula el conjugado de cada uno de sus elemntos.
 * MatrizAdjunta: dada una matriz, calcula su adjuta(trasnpuesta y conjugada).
+* NormaMatriz: dada una matriz, calcula la norma de esta.
+* DistanciaMatrizes: recibe dos matrizes, y calcula la distancia entre ambas.
+* EsMatrizUnitaria: Dada una matriz, calcula si esta es unitaria, retorna verdadero o falso.
+* isHermitianMatriz: dada una matriz, calcula si esta matriz es hermitiana.
+* Producto tensor: Dadas dos matries, realiza la operacion del productor tensor en ellas, retorna el resultado de esta operacion;
 
 ### Testing
 
 _Se crearon 9 pruebas, una por cada metodo y la prueba madre i*i, para ejecutarlas use mvn.
+
+Para vectores y matrizes se crearon 15 pruebas, cada una por funcion.
 
 ```
 $ mvn test
