@@ -68,5 +68,28 @@ $ mvn test
 ```
 ![](Test.PNG)
 
+# Uso del codigo
+
+**Importar Librerias**
+
+```
+import eci.escuelaing.libreriacomputacioncuantica.libreriacomputacion.LibreriaComputacion;
+import eci.escuelaing.libreriacomputacioncuantica.libreriacomputacion.NumeroComplejo;
+import eci.escuelaing.libreriacomputacioncuantica.libreriacomputacion.NumeroPolar;
+```
+**Crea la el objeto  LibreriaComputacion**
+
+```
+ LibreriaComputacion app = new LibreriaComputacion();
+```
+
+**Ya puedes usar los metodos**
+
+```
+NumeroComplejo nc1 = new NumeroComplejo(6,5);
+NumeroComplejo nc2 = new NumeroComplejo(1,-5);
+NumeroComplejo respuesta = app.suma(nc1, nc2);
+```
+
 # License
 This project is under the Apache license - see [LICENSE](LICENSE.txt) for more details.
