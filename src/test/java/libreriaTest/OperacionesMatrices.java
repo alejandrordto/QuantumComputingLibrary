@@ -144,11 +144,11 @@ public class OperacionesMatrices {
         lista[0][1] = new NumeroComplejo(1, 1);
         lista[1][0] = new NumeroComplejo(1, 1);
         lista[1][1] = new NumeroComplejo(1, 1);
-        esperado[0][0] = new NumeroComplejo(-1, -1);
-        esperado[0][1] = new NumeroComplejo(-1, -1);
-        esperado[1][0] = new NumeroComplejo(-1, -1);
-        esperado[1][1] = new NumeroComplejo(-1, -1);
-        NumeroComplejo[][] respuesta = operador.inversaMatriz(lista);
+        esperado[0][0] = new NumeroComplejo(1, -1);
+        esperado[0][1] = new NumeroComplejo(1, -1);
+        esperado[1][0] = new NumeroComplejo(1, -1);
+        esperado[1][1] = new NumeroComplejo(1, -1);
+        NumeroComplejo[][] respuesta = operador.MatrizConjugada(lista);
         assertEquals(respuesta, esperado);
     }
 
