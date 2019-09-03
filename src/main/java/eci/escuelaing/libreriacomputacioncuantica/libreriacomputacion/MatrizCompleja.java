@@ -73,6 +73,17 @@ public class MatrizCompleja {
         }
         return true;
     }
-    
+      @Override
+    public int hashCode(){
+        int hash=3;
+        if (this.esvector){
+            hash = 70 * hash + (int) (Double.doubleToLongBits(this.vector.hashCode()) ^ (Double.doubleToLongBits(this.vector.hashCode()) >>> 32));
+        } else {
+            hash = 70 * hash + (int) (Double.doubleToLongBits(this.matriz.hashCode()) ^ (Double.doubleToLongBits(this.matriz.hashCode()) >>> 32));
+        }
+        
+       
+        return hash;
+    }
     
 }
