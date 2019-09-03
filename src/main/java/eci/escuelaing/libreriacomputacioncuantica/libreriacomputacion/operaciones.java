@@ -230,4 +230,20 @@ public class operaciones {
 		}
 		return r;
 	}
+    public  NumeroComplejo[] actionMatrixVector(NumeroComplejo[][] m1, NumeroComplejo[] v) throws Exception{
+		if (m1[0].length != v.length) {
+			throw new Exception("The length of the matrix's rows are different to the length of the vector");
+		} else {
+			NumeroComplejo[] r = new NumeroComplejo[v.length];  
+			NumeroComplejo s = new NumeroComplejo(0,0);
+			for (int i = 0; i < v.length; i++) {
+				for (int j = 0; j < m1[0].length; j++) {
+					s = app.suma(s, app.producto(m1[i][j], v[j]));
+				}
+				r[i] = s;
+				s = new NumeroComplejo(0,0);
+			}
+			return r;
+		}
+	}
 }
