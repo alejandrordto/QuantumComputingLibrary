@@ -221,7 +221,7 @@ public class OperacionesMatrices {
         lista[1][0] = new NumeroComplejo(6, -6);
         lista[1][1] = new NumeroComplejo(-6, 6);
         boolean esperado = false;
-        boolean respuesta = operador.EsMatrizUnitaria(lista);
+        boolean respuesta = operador.isHermitianMatrix(lista);
         assertEquals(respuesta, esperado);
     }
 
@@ -230,20 +230,32 @@ public class OperacionesMatrices {
 
         NumeroComplejo[][] lista = new NumeroComplejo[2][2];
         NumeroComplejo[][] listaDos = new NumeroComplejo[2][2];
-        NumeroComplejo[][] esperado = new NumeroComplejo[2][2];
+        NumeroComplejo[][] esperado = new NumeroComplejo[4][4];
         lista[0][0] = new NumeroComplejo(1, 0);
-        lista[0][1] = new NumeroComplejo(0, 1);
-        lista[1][0] = new NumeroComplejo(1, 0);
-        lista[1][1] = new NumeroComplejo(0, 1);
-        listaDos[0][0] = new NumeroComplejo(0, 1);
+        lista[0][1] = new NumeroComplejo(0, 0);
+        lista[1][0] = new NumeroComplejo(2, 0);
+        lista[1][1] = new NumeroComplejo(3, 0);
+        listaDos[0][0] = new NumeroComplejo(1, 0);
         listaDos[0][1] = new NumeroComplejo(1, 0);
-        listaDos[1][0] = new NumeroComplejo(0, 1);
+        listaDos[1][0] = new NumeroComplejo(1, 0);
         listaDos[1][1] = new NumeroComplejo(1, 0);
-        esperado[0][0] = new NumeroComplejo(1, 1);
-        esperado[0][1] = new NumeroComplejo(1, 1);
-        esperado[1][0] = new NumeroComplejo(1, 1);
-        esperado[1][1] = new NumeroComplejo(1, 1);
-        NumeroComplejo[][] respuesta = operador.sumaMatriz(lista, listaDos);
+        esperado[0][0] = new NumeroComplejo(1, 0);
+        esperado[0][1] = new NumeroComplejo(1, 0);
+        esperado[0][2] = new NumeroComplejo(0, 0);
+        esperado[0][3] = new NumeroComplejo(0, 0);
+        esperado[1][0] = new NumeroComplejo(1, 0);
+        esperado[1][1] = new NumeroComplejo(1, 0);
+        esperado[1][2] = new NumeroComplejo(0, 0);
+        esperado[1][3] = new NumeroComplejo(0, 0);
+        esperado[2][0] = new NumeroComplejo(2, 0);
+        esperado[2][1] = new NumeroComplejo(2, 0);
+        esperado[2][2] = new NumeroComplejo(3, 0);
+        esperado[2][3] = new NumeroComplejo(3, 0);
+        esperado[3][0] = new NumeroComplejo(2, 0);
+        esperado[3][1] = new NumeroComplejo(2, 0);
+        esperado[3][2] = new NumeroComplejo(3, 0);
+        esperado[3][3] = new NumeroComplejo(3, 0);
+        NumeroComplejo[][] respuesta = operador.ProductoTensor(lista, listaDos);
         assertEquals(respuesta, esperado);
     }
 
@@ -262,10 +274,10 @@ public class OperacionesMatrices {
         lista[2][0] = new NumeroComplejo(4, -1);
         lista[2][1] = new NumeroComplejo(0, 0);
         lista[2][2] = new NumeroComplejo(4, 0);
-        listaDos[0] = new NumeroComplejo(7,8);
+        listaDos[0] = new NumeroComplejo(7, 8);
         listaDos[1] = new NumeroComplejo(9, 0);
         listaDos[2] = new NumeroComplejo(1, 2);
-        esperado[0] = new NumeroComplejo(22,42);
+        esperado[0] = new NumeroComplejo(22, 42);
         esperado[1] = new NumeroComplejo(41, 27);
         esperado[2] = new NumeroComplejo(40, 33);
         NumeroComplejo[] respuesta = operador.actionMatrixVector(lista, listaDos);
