@@ -7,15 +7,19 @@ package libreriaTest;
 
 import eci.escuelaing.libreriacomputacioncuantica.libreriacomputacion.NumeroComplejo;
 import eci.escuelaing.libreriacomputacioncuantica.libreriacomputacion.operaciones;
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
- * @author Alejandro rodriguez
+ * @author 2112107
  */
-public class OperacionesMatrices {
-
+public class TestMatrizesvetores {
+    
     private operaciones operador = new operaciones();
 
     @Test

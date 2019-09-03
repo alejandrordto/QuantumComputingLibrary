@@ -53,7 +53,6 @@ public class operaciones {
             }
 
         }
-        System.out.println(matriz[0][1]);
         return matriz;
     }
 
