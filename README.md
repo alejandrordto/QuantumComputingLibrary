@@ -1,6 +1,6 @@
 # Librería computación Cuántica: Números complejos
 
-_Este proyecto tiene la intencion de crear una especie de calculadora capaz de realizar operaciones con numeros complejos, con matrizes y vectores.
+Este proyecto tiene la intencion de crear una especie de calculadora capaz de realizar operaciones con numeros complejos, con matrizes y vectores.
 
 ## Desarrollado por: 
 
@@ -8,7 +8,7 @@ _Este proyecto tiene la intencion de crear una especie de calculadora capaz de r
 
 ### Operaciones
 
-_las operaciones que dispone la aplicacion Para numeros complejos son:
+las operaciones que dispone la aplicacion Para numeros complejos son:
 
 * Suma: Suma entre  numeros complejos, como parametro entran dos complejos.
 * resta: resta entre numeros complejos, como parametro entran dos complejos.
@@ -21,7 +21,7 @@ _las operaciones que dispone la aplicacion Para numeros complejos son:
 * Fase: Fase del complejo, recibe un NUmero complejo y retorna la representacion del radio de este.
 
 -----------
-
+ #### Operaciones Vectores y Matrizes
 las operaciones disponibles para hacer calculos con las matrizes y vectores son:
 
 * sumaVectorial: coje dos vectores y los suma.
@@ -41,10 +41,32 @@ las operaciones disponibles para hacer calculos con las matrizes y vectores son:
 
 ### Testing
 
-_Se crearon 9 pruebas, una por cada metodo y la prueba madre i*i, para ejecutarlas use mvn.
+Se crearon 9 pruebas, una por cada metodo y la prueba madre i*i, para ejecutarlas use mvn.
 
 Para vectores y matrizes se crearon 15 pruebas, cada una por funcion.
 
+**Descarga**
+```
+$ git clone https://github.com/alejandrordto/QuantumComputingLibrary
+```
+**Entra a la Capeta**
+```
+$ cd QuantumComputingLibrary
+```
+
+**Compila**
+```
+$ mvn clean compile
+```
+**Packing**
+```
+$ mvn package
+```
+**tests**
 ```
 $ mvn test
 ```
+
+
+# License
+This project is under the Apache license - see [LICENSE](LICENSE.txt) for more details.
