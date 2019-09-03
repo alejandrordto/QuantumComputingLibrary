@@ -22,7 +22,7 @@ _las operaciones que dispone la aplicacion Para numeros complejos son:
 
 -----------
 
-las operaciiones disponibles para hacer calculos con las matrizes y vectores son:
+las operaciones disponibles para hacer calculos con las matrizes y vectores son:
 
 * sumaVectorial: coje dos vectores y los suma.
 * inversaVectorial: calcula el inverso de una vector.
