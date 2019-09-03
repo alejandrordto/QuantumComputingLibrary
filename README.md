@@ -66,7 +66,7 @@ $ mvn package
 ```
 $ mvn test
 ```
-
+![](Test.PNG)
 
 # License
 This project is under the Apache license - see [LICENSE](LICENSE.txt) for more details.
