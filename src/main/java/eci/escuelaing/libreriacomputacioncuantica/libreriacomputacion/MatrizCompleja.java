@@ -17,6 +17,14 @@ import java.lang.reflect.Array;
  */
 public class MatrizCompleja {
 
+    public void setMatriz(NumeroComplejo[][] matriz) {
+        this.matriz = matriz;
+    }
+
+    public void setVector(NumeroComplejo[] vector) {
+        this.vector = vector;
+    }
+
     private NumeroComplejo[][] matriz;
     private NumeroComplejo[] vector;
     private boolean esvector;

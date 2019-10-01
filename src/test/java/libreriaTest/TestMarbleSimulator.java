@@ -8,7 +8,6 @@ package libreriaTest;
 
 
 import eci.escuelaing.libreriacomputacioncuantica.libreriacomputacion.MarbleSimulator;
-import eci.escuelaing.libreriacomputacioncuantica.libreriacomputacion.NumeroComplejo;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -31,22 +30,35 @@ public class TestMarbleSimulator {
     @Test
     // Example 3.1.3 - Quantum Computing for Computer Scientists
     public void SistemaDeterministicoClasico() {
-        NumeroComplejo uno=new NumeroComplejo(1, 0);
-        NumeroComplejo cero=new NumeroComplejo(0, 0);
-        NumeroComplejo[][] matrizBool = {{cero, cero,cero, cero, cero,cero},
-        {cero, cero,cero, cero, cero,cero},
-        {cero, uno, cero, cero, cero, uno},
-        {cero, cero, cero, uno, cero, cero},
-        {cero, cero, uno, cero, cero, cero},
-        {uno, cero, cero, cero, uno, cero}};
-        NumeroComplejo [] estadoInicial = {new NumeroComplejo(6, 0),
-            new NumeroComplejo(2, 0), uno, new NumeroComplejo(5, 0), 
-            new NumeroComplejo(3, 0), new NumeroComplejo(10, 0)};
+        double[][] matrizBool = {{0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0},
+        {0, 1, 0, 0, 0, 1},
+        {0, 0, 0, 1, 0, 0},
+        {0, 0, 1, 0, 0, 0},
+        {1, 0, 0, 0, 1, 0}};
+        double[] estadoInicial = {6, 2, 1, 5, 3, 10};
         simulador.setEstado(estadoInicial);
         simulador.setSistema(matrizBool);
-        NumeroComplejo[] respuesta= simulador.TerministicoClasico(0);
-        NumeroComplejo[] esperado = {cero, cero, new NumeroComplejo(12, 0), 
-            new NumeroComplejo(5, 0), uno, new NumeroComplejo(9, 0)};
+        double[] respuesta= simulador.TerministicoClasico(0);
+        double[] esperado = {0, 0, 12, 5, 1, 9};
+         for(int i=0;i<esperado.length;i++){
+            assertTrue(esperado[i]==respuesta[i]);
+        }
+    }
+     @Test
+    public void  programmingDrill321Test(){
+        double[][] matrizBool = {{0,0,0,0},
+                                 {0,0,0,2.3},
+                                 {0,2.3,0,0},
+                                 {2.3,0,0,0}};
+        double[] estadoInicial = {6,2,5,3};
+        simulador.setEstado(estadoInicial);
+        simulador.setSistema(matrizBool);
+        double[] solucion = simulador.TerministicoClasico(2);
+        double[] respuesta = {0,31.739999999999995,15.869999999999997,0};
+        for(int i=0;i<respuesta.length;i++){
+            assertTrue(respuesta[i]==solucion[i]);
+        }
     }
 
     // TODO add test methods here.
