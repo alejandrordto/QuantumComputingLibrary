@@ -39,6 +39,16 @@ las operaciones disponibles para hacer calculos con las matrizes y vectores son:
 * isHermitianMatriz: dada una matriz, calcula si esta matriz es hermitiana.
 * Producto tensor: Dadas dos matries, realiza la operacion del productor tensor en ellas, retorna el resultado de esta operacion;
 
+## Retos de Programacion
+
+### Experimento de las canicas
+
+Este programa replica el sistema de Las canicas, el cual consiste en dada cierta cantidad de canicas en un orden ya establecido, reorganizarlas mediante una matriz booleana y un vector con el numero de canicas en cada posición, ademas tendremos un numero de clicks el cual nos determinará el numero de movimientos del sistema, el usuario debera ingresar numeros complejos.
+
+### Experimento de la doble rendija
+
+Este programa replica el sistema de La doble rendija, el cual consiste en calcular la matriz de probabilidades del experimento segun la cantidad de rendijas y el numero de objetivos igresados por el usuario, ademas todo deve ser ingresado en numeros complejos.
+
 ### Testing
 
 Se crearon 9 pruebas, una por cada metodo y la prueba madre i*i, para ejecutarlas use mvn.
