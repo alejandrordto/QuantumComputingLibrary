@@ -34,6 +34,23 @@ public class NumeroComplejo {
     public double getImaginario() {
         return imaginario;
     }
+    public  double redondearDecimales(double valorInicial, int numeroDecimales) {
+        double parteEntera, resultado;
+        resultado = valorInicial;
+        parteEntera = Math.floor(resultado);
+        resultado=(resultado-parteEntera)*Math.pow(10, numeroDecimales);
+        resultado=Math.round(resultado);
+        resultado=(resultado/Math.pow(10, numeroDecimales))+parteEntera;
+        return resultado;
+    }
+    public NumeroComplejo redondear(){
+        this.imaginario=redondearDecimales(this.imaginario,3);
+        this.real=redondearDecimales(this.real,3);
+        return this;
+    }
+    public double modulus() {
+		return  Math.sqrt(Math.pow(this.real, 2) + Math.pow(this.imaginario, 2));
+	}
 
     @Override
     public boolean equals(Object obj) { 

@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
  */
 public class TestMatrizesvetores {
     
-    private operaciones operador = new operaciones();
+        private operaciones operador = new operaciones();
 
     @Test
     public void adicionVectorial() {
