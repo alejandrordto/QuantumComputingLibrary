@@ -37,7 +37,17 @@ las operaciones disponibles para hacer calculos con las matrizes y vectores son:
 * DistanciaMatrizes: recibe dos matrizes, y calcula la distancia entre ambas.
 * EsMatrizUnitaria: Dada una matriz, calcula si esta es unitaria, retorna verdadero o falso.
 * isHermitianMatriz: dada una matriz, calcula si esta matriz es hermitiana.
-* Producto tensor: Dadas dos matries, realiza la operacion del productor tensor en ellas, retorna el resultado de esta operacion;
+* Producto tensor: Dadas dos matries, realiza la operacion del productor tensor en ellas, retorna el resultado de esta operacion.
+
+-----------
+ #### Operaciones Cuanticas
+ Las operaciones para la teoria cuantica basica y del sistemacuantico de una particula en una línea son:
+ 
+ * AmplitudeProbability: Calcula la probabilidad que una particula sea encontrada en una posición especifica.
+ * transitionAmplitude: Dados dos vectores, calcula ls smplitud de transicion entre ambos despues de hacer la observacion.
+ * meanValue: Dado un ket y un observable, calcula la media.
+ * variance: Dado un ket y un observable, calcula la varianza.
+ * dynamics: Calcula el estado final, dado el inicial.
 
 ## Retos de Programacion
 
