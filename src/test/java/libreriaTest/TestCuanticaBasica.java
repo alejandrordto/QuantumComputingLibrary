@@ -54,5 +54,41 @@ public class TestCuanticaBasica {
         NumeroComplejo actual = operador.variance(ket, observable);
         assertEquals(expected, actual);
     }
+    @Test
+	public void dynamicsTest() throws Exception{
+		NumeroComplejo[] initialState = new NumeroComplejo[2];
+		initialState[0] = new NumeroComplejo(1, 0);
+		initialState[1] = new NumeroComplejo(0,0);
+		NumeroComplejo[][][] matrixArray = new NumeroComplejo[4][2][2];
+		NumeroComplejo[][] m1 = new  NumeroComplejo[2][2];
+		m1[0][0] = new NumeroComplejo(0,0);
+		m1[0][1] = new NumeroComplejo(1/Math.sqrt(2), 0);
+		m1[1][0] = new NumeroComplejo(1/Math.sqrt(2), 0);
+		m1[1][1] = new NumeroComplejo(0,0);
+		NumeroComplejo[][] m2 = new  NumeroComplejo[2][2];
+		m2[0][0] = new NumeroComplejo(0, 1/Math.sqrt(2));
+		m2[0][1] = new NumeroComplejo(0,0);
+		m2[1][0] = new NumeroComplejo(0,0);
+		m2[1][1] = new NumeroComplejo(1/Math.sqrt(2), 0);
+		NumeroComplejo[][] m3 = new NumeroComplejo[2][2];
+		m3[0][0] = new NumeroComplejo(1/Math.sqrt(2), 0);
+		m3[0][1] = new NumeroComplejo(0,0);
+		m3[1][0] = new NumeroComplejo(0,0);
+		m3[1][1] = new NumeroComplejo(0, 1/Math.sqrt(2));
+		NumeroComplejo[][] m4 = new NumeroComplejo[2][2];
+		m4[0][0] = new NumeroComplejo(0,0);
+		m4[0][1] = new NumeroComplejo(1/Math.sqrt(2), 0);
+		m4[1][0] = new NumeroComplejo(-1/Math.sqrt(2), 0);
+		m4[1][1] = new NumeroComplejo(0,0);
+		matrixArray[0] = m1;
+		matrixArray[1] = m2;
+		matrixArray[2] = m3;
+		matrixArray[3] = m4;
+		NumeroComplejo[] expected = new NumeroComplejo[2];
+		expected[0] = new NumeroComplejo(0, 0);
+		expected[1] = new NumeroComplejo(0.24999999999999992,0);
+		NumeroComplejo[] actual = operador.dynamics(matrixArray, initialState);
+		assertEquals(expected, actual);
 
+	}
 }
