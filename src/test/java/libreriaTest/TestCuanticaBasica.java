@@ -24,7 +24,7 @@ public class TestCuanticaBasica {
 
     public TestCuanticaBasica() {
     }
-
+    
     @Test
     public void meanValueTest() throws Exception {
         NumeroComplejo[] ket = new NumeroComplejo[2];

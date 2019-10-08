@@ -32,6 +32,33 @@ public class TestMarble {
         }
         return v;
     }
+     @Test
+    public void  programmingDrill311Test(){
+        double[][] matrizBool = {{0,0,0,0},
+                                 {0,0,0,1},
+                                 {0,1,0,0},
+                                 {1,0,0,0}};
+        double[] estadoInicial = {6,2,5,3};
+        double[] solucion = operador.MarbleExperimet(matrizBool, estadoInicial, 2);
+        double[] respuesta = {0,6,3,0};
+        for(int i=0;i<respuesta.length;i++){
+            assertTrue(respuesta[i]==solucion[i]);
+        }
+    }
+
+    @Test
+    public void  programmingDrill321Test(){
+        double[][] matrizDoubles = {{0,0,0,0},
+                                    {0,0,0,2.3},
+                                    {0,2.3,0,0},
+                                    {2.3,0,0,0}};
+        double[] estadoInicial = {6,2,5,3};
+        double[] solucion = operador.MarbleExperimet(matrizDoubles, estadoInicial, 2);
+        double[] respuesta = {0,31.739999999999995,15.869999999999997,0};
+        for(int i=0;i<respuesta.length;i++){
+            assertTrue(respuesta[i]==solucion[i]);
+        }
+    }
     @Test
 	public void marblesExperimentTest() throws Exception {
 		NumeroComplejo[][] A = new NumeroComplejo[3][3];

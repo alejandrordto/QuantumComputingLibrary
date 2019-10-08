@@ -279,7 +279,21 @@ public class operaciones {
         }
         return r;
     }
-
+    public double[] MarbleExperimet(double[][]matriz,double[]estadoInicial,int clicks){
+        double [] respuesta = new double[estadoInicial.length];
+        while(clicks!=0) {
+            for (int i = 0; i < estadoInicial.length; i++) {
+                double suma = 0;
+                for (int j = 0; j < estadoInicial.length; j++) {
+                    suma += matriz[i][j] * estadoInicial[j];
+                }
+                respuesta[i] = suma;
+            }
+            System.arraycopy(respuesta, 0, estadoInicial, 0, estadoInicial.length);
+            clicks-=1;
+        }
+        return respuesta;
+    }
     private NumeroComplejo[][] createMatrix(int i, int j) {
         NumeroComplejo[][] r = null;
         try {
