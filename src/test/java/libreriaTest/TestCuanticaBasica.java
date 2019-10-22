@@ -91,4 +91,8 @@ public class TestCuanticaBasica {
 		assertEquals(expected, actual);
 
 	}
+    @Test
+    public void hermitianTest() throws Exception{
+        
+    }
 }

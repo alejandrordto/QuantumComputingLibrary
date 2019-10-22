@@ -377,5 +377,14 @@ public class operaciones {
         }
         return ans;
     }
-
+    public  NumeroComplejo[] hermitianCuantica(NumeroComplejo[] ket, NumeroComplejo[][] observable) throws Exception{
+        NumeroComplejo[] ans=new NumeroComplejo[2];
+        if(this.isHermitianMatrix(observable)){
+            ans[0]=this.meanValue(ket, observable);
+            ans[1]=this.variance(ket, observable);
+        } else{
+            throw new Exception("The observble it's not hermitian");
+        }
+        return ans;
+    }
 }
